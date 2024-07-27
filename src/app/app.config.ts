@@ -3,7 +3,20 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { PatternReducer } from './shared/store/pattern.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { PatternEffects } from './shared/store/pattern.effect';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient()],
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(),
+    importProvidersFrom(
+      StoreModule.forRoot({}),
+      EffectsModule.forRoot([]),
+      StoreDevtoolsModule.instrument()
+    ),
+  ],
 };

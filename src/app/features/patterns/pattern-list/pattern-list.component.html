@@ -1,0 +1,12 @@
+@if(loading$ | async) {
+  <p>is Loading</p>
+}@else {
+    <ul>
+        @for(pattern of patterns$ | async ; track pattern.id ){
+            <li>
+                {{pattern.title}}
+            </li>
+        }
+       
+    </ul>
+}
