@@ -1,5 +1,4 @@
 import type { ResolveFn } from '@angular/router';
-import { PatternService } from '../../../services/pattern.service';
 import { inject } from '@angular/core';
 import * as fromReducer from '../store/pattern.reducer';
 import * as fromActions from '../store/pattern.action';

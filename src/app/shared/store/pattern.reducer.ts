@@ -1,30 +1,6 @@
-import {
-  createReducer,
-  on,
-  State,
-  Action,
-  createFeatureSelector,
-} from '@ngrx/store';
+import { createReducer, on, Action, createFeatureSelector } from '@ngrx/store';
 import * as fromActions from './pattern.action';
-
-export interface Pattern {
-  id: string;
-  title: string;
-  chapter: Chapter[];
-}
-
-export interface Chapter {
-  id: string;
-  title: string;
-  color: string;
-  todo: Todo[];
-}
-
-export interface Todo {
-  id: string;
-  round: string;
-  nbNode: number;
-}
+import { Pattern } from '../models/pattern.interface';
 
 export interface PatternState {
   patterns: Pattern[];

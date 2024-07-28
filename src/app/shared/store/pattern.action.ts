@@ -1,11 +1,11 @@
-import { Action, createAction, props } from '@ngrx/store';
-import * as fromReducer from './pattern.reducer';
+import { createAction, props } from '@ngrx/store';
+import { Pattern } from '../models/pattern.interface';
 
 export const loadRequest = createAction('[Pattern] Load Request');
 
 export const loadRequestSuccess = createAction(
   '[Pattern] Load Request success',
-  props<{ payload: fromReducer.Pattern[] }>()
+  props<{ payload: Pattern[] }>()
 );
 
 export const loadRequestFailure = createAction(
